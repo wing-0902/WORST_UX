@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import alpinejs from '@astrojs/alpinejs';
 
@@ -7,4 +7,20 @@ import alpinejs from '@astrojs/alpinejs';
 export default defineConfig({
   site: 'https://acdfghijklmnopqruvw.xyz',
   integrations: [alpinejs()],
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google({
+          experimental: {
+            glyphs: {
+              "Coming Soon": ["-best UX"],
+            },
+          },
+        }),
+        name: "Coming Soon",
+        cssVariable: '--font-coming-soon',
+        styles: ["normal"]
+      }
+    ]
+  }
 });

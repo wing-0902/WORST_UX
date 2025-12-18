@@ -1,6 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
-
+import { Font } from "astro:assets";
 import '$lib/styles/globals.scss';
 
 // メタタグ用
@@ -44,6 +44,7 @@ import Header from "$lib/components/layout/Header.astro";
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonicalURL} />
 
+    <Font cssVariable="--font-coming-soon" preload />
     <ClientRouter />
   </head>
   <body>
