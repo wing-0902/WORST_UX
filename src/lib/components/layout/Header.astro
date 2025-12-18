@@ -4,7 +4,7 @@ import { Font } from "astro:assets";
 
 <header>
   <a class="title" href="/">
-    <h1>UX — best</h1>
+    <span>UX — best</span>
   </a>
   <div class="menu">
     <ul>
@@ -27,9 +27,13 @@ import { Font } from "astro:assets";
     width: 100vw;
     .title {
       height: 100%;
-      h1 {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 32px;
         margin: 0 20px;
         font-family: var(--font-coming-soon);
+        font-weight: bold;
       }
       text-decoration: none;
       text-shadow: 2px 2px 2px var(--headerH1-shadow);
@@ -61,8 +65,9 @@ import { Font } from "astro:assets";
             text-decoration: none;
             text-shadow: 2px 2px 2px var(--link-shadow);
             transition: all 0.25s ease;
+            transform: translate3d(-2px, -2px, 0);
             &:hover {
-              transform: translate3d(2px, 2px, 0);
+              transform: translate3d(0, 0, 0);
               text-shadow: 0 0 1px var(--link-shadow);
             }
           }
