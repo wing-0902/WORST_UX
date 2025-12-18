@@ -10,16 +10,17 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: fontProviders.google({
-          experimental: {
-            glyphs: {
-              "Coming Soon": ["UX — best"],
-            },
-          },
-        }),
+        provider: fontProviders.google(),
         name: "Coming Soon",
         cssVariable: '--font-coming-soon',
         styles: ["normal"]
+      },
+      {
+        provider: fontProviders.bunny(),
+        name: "BIZ UDGothic",
+        cssVariable: '--font-biz-udgothic',
+        styles: ["normal"],
+        weights: [400],
       }
     ]
   }

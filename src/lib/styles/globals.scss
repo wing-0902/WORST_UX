@@ -1,0 +1,21 @@
+// ライトモード
+$foreground: rgb(0, 17, 83);
+$background: rgb(255, 248, 225);
+$link: rgb(21, 54, 188);
+
+//ダークモード
+$foreground-dark: #d8e0ff;
+$background-dark: rgb(64, 64, 64);
+$link-dark: rgb(150, 171, 255);
+
+:root {
+  --foreground: $foreground;
+  --background: $background;
+  --link: $link;
+
+  @media (prefers-color-scheme: dark) {
+    --foreground: $foreground-dark;
+    --background: $background-dark;
+    --link: $link-dark;
+  }
+}
