@@ -13,9 +13,26 @@ $link-dark: rgb(150, 171, 255);
   --background: #{$background};
   --link: #{$link};
 
+  // 使い所少ないやつ
+  --link-hover: #{rgba($link, 0.7)};
+  --text-hover: #{rgba($foreground, 0.7)};
+
   @media (prefers-color-scheme: dark) {
     --foreground: #{$foreground-dark};
     --background: #{$background-dark};
     --link: #{$link-dark};
+
+    // 使い所少ないやつ
+    --link-hover: #{rgba($link-dark, 0.7)};
+    --text-hover: #{rgba($foreground-dark, 0.7)};
+  }
+
+  color: var(--foreground);
+}
+
+a {
+  color: var(--link) !important;
+  &:hover {
+    color: var(--link-hover) !important;
   }
 }

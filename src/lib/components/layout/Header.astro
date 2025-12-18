@@ -3,7 +3,7 @@ import { Font } from "astro:assets";
 ---
 
 <header>
-  <a href="/">
+  <a class="title" href="/">
     <h1>UX — best</h1>
   </a>
   <div class="menu">
@@ -21,14 +21,17 @@ import { Font } from "astro:assets";
     justify-content: space-between;
     height: 47px;
     border-bottom: 1px solid black;
-    a {
+    .title {
       height: 100%;
       h1 {
         margin: 0 20px;
         font-family: var(--font-coming-soon);
       }
       text-decoration: none;
-      color: var(--foreground);
+      color: var(--foreground) !important;
+      &:hover {
+        color: var(--text-hover) !important;
+      }
     }
     .menu {
       height: 100%;
@@ -45,7 +48,6 @@ import { Font } from "astro:assets";
           font-size: 20px;
           a {
             text-decoration: none;
-            color: var(--link);
           }
         }
       }
