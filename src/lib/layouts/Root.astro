@@ -19,7 +19,7 @@ const {
   noindex = false
 } = Astro.props;
 
-const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
 const metaTitle = (title === defaultTitle)
   ? defaultTitle
@@ -38,11 +38,11 @@ import Header from "$lib/components/layout/Header.astro";
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
-    <title data-pagefind-meta="title">{title}</title>
+    <title data-pagefind-meta="title">{metaTitle}</title>
     <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={正規URL} />
+    <link rel="canonical" href={canonicalURL} />
 
     <ClientRouter />
   </head>
