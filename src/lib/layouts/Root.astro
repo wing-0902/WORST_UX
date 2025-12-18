@@ -1,0 +1,22 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+import '@lib/styles/globals.scss';
+
+const defaultTitle: string = 'クソUXを体験せよ';
+const defaultDescription: string = 'これを体験したら，開発者に感謝してください．';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  noindex = false
+} = Astro.props;
+
+const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
+---
