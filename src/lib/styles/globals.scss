@@ -9,13 +9,13 @@ $background-dark: rgb(64, 64, 64);
 $link-dark: rgb(150, 171, 255);
 
 :root {
-  --foreground: $foreground;
-  --background: $background;
-  --link: $link;
+  --foreground: #{$foreground};
+  --background: #{$background};
+  --link: #{$link};
 
   @media (prefers-color-scheme: dark) {
-    --foreground: $foreground-dark;
-    --background: $background-dark;
-    --link: $link-dark;
+    --foreground: #{$foreground-dark};
+    --background: #{$background-dark};
+    --link: #{$link-dark};
   }
 }
