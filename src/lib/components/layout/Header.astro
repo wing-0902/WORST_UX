@@ -3,10 +3,11 @@ import { Font } from "astro:assets";
 ---
 
 <header>
-  <h1>UX — best</h1>
+  <a href="/">
+    <h1>UX — best</h1>
+  </a>
   <div class="menu">
     <ul>
-      <li><a href="/">Home</a></li>
       <li><a href="/post/">Blog</a></li>
       <li><a href="/profile/">Profile</a></li>
       <li><a href="/form/">Form</a></li>
@@ -18,19 +19,26 @@ import { Font } from "astro:assets";
   header {
     display: flex;
     justify-content: space-between;
-    height: 30px;
-    background: red;
+    height: 47px;
     border-bottom: 1px solid black;
-    h1 {
-      margin: 0;
-      font-family: var(--font-coming-soon);
+    a {
+      height: 100%;
+      h1 {
+        margin: 0 20px;
+        font-family: var(--font-coming-soon);
+      }
     }
     .menu {
+      height: 100%;
       ul {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: last baseline;
         display: flex;
         list-style: none;
         li {
-          margin-right: 10px;
+          margin: 0 16px 7px 0;
         }
       }
     }
