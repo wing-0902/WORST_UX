@@ -28,9 +28,13 @@ import { Font } from "astro:assets";
         font-family: var(--font-coming-soon);
       }
       text-decoration: none;
+      text-shadow: 2px 2px 4px var(--headerH1-shadow);
       color: var(--foreground) !important;
+      transition: all 0.25s ease;
       &:hover {
         color: var(--headerH1-hover) !important;
+        transform: translate3d(2px, 2px, 0);
+        text-shadow: 0 0 2px var(--headerH1-shadow);
         h1 {
           color: var(--headerH1-hover) !important;
         }
