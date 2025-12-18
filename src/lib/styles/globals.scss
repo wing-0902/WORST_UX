@@ -15,7 +15,7 @@ $link-dark: rgb(150, 171, 255);
 
   // 使い所少ないやつ
   --link-hover: #{rgba($link, 0.6)};
-  --text-hover: #{rgba($foreground, 0.55)};
+  --headerH1-hover: #{rgba($foreground, 0.4)};
 
   @media (prefers-color-scheme: dark) {
     --foreground: #{$foreground-dark};
@@ -24,7 +24,7 @@ $link-dark: rgb(150, 171, 255);
 
     // 使い所少ないやつ
     --link-hover: #{rgba($link-dark, 0.6)};
-    --text-hover: #{rgba($foreground-dark, 0.55)};
+    --headerH1-hover: #{rgba($foreground-dark, 0.4)};
   }
 
   color: var(--foreground);
