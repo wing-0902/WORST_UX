@@ -13,7 +13,7 @@ export default defineConfig({
         provider: fontProviders.google({
           experimental: {
             glyphs: {
-              "Coming Soon": ["-best UX"],
+              "Coming Soon": ["UX — best"],
             },
           },
         }),
