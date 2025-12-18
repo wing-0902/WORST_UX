@@ -1,8 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
 
-import '@lib/styles/globals.scss';
+import '$lib/styles/globals.scss';
 
+// メタタグ用
 const defaultTitle: string = 'クソUXを体験せよ';
 const defaultDescription: string = 'これを体験したら，開発者に感謝してください．';
 
@@ -23,6 +24,9 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
 const metaTitle = (title === defaultTitle)
   ? defaultTitle
   : `title | ${defaultTitle}`
+
+// UIコンポーネント
+import Header from "$lib/components/layout/Header.astro";
 ---
 
 <!doctype html>
@@ -43,6 +47,7 @@ const metaTitle = (title === defaultTitle)
     <ClientRouter />
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
