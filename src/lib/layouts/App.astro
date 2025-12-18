@@ -1,0 +1,48 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+import '@lib/styles/globals.scss';
+
+const defaultTitle: string = 'クソUXを体験せよ';
+const defaultDescription: string = 'これを体験したら，開発者に感謝してください．';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  noindex = false
+} = Astro.props;
+
+const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
+
+const metaTitle = (title === defaultTitle)
+  ? defaultTitle
+  : `title | ${defaultTitle}`
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- 基本情報とAstro -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title data-pagefind-meta="title">{title}</title>
+    <meta name="description" content={description} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={正規URL} />
+
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
